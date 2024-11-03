@@ -4,7 +4,7 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 class YoutubeVideoPlayer extends StatelessWidget {
   final String videoId;
 
-  const YoutubeVideoPlayer({required this.videoId, Key? key}) : super(key: key);
+  const YoutubeVideoPlayer({required this.videoId, super.key});
 
   @override
   Widget build(BuildContext context) {

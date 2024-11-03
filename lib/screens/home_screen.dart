@@ -13,11 +13,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),    
       appBar: AppBar(
-        title: const Text('Teacher Luis',
-        
-        style: TextStyle(color: Colors.white),),
+        title: const Text('Teacher Luis', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
         backgroundColor: Colors.red,
+        elevation: 2.5,
+        shadowColor: Colors.blue,
+        toolbarHeight: 55,
+        iconTheme: IconThemeData(color: Colors.white),
         
       ),
       body: Container(
@@ -54,7 +57,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
               showYoutubeVideo(context, "LuptRn1mjaI");
             },
-            child: const Text("Ver el video en youtbe"),
+            child: const Text("Ver el video en youtube"),
             
             ),
 
