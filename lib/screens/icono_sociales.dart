@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
+
+void _launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class SocialIconsRow extends StatelessWidget {
   const SocialIconsRow({super.key});
@@ -14,11 +25,15 @@ class SocialIconsRow extends StatelessWidget {
           icon: const Icon(Icons.facebook), // 
           color: const Color.fromARGB(255, 2, 6, 255),
           iconSize: 50.0,
-          onPressed: () {},
+          onPressed: () {
+            _launchURL("https://www.facebook.com/");
+          },
         ),
         //Icono de instagram
         IconButton(
-          onPressed: (){},
+          onPressed: (){
+            _launchURL("https://www.instagram.com/");
+          },
           icon: const FaIcon(
           FontAwesomeIcons.instagram,          
           ), 
@@ -27,7 +42,9 @@ class SocialIconsRow extends StatelessWidget {
         ),
         //icono de twitter
         IconButton(
-          onPressed: (){},
+          onPressed: (){
+            _launchURL("https://x.com/?lang=es");
+          },
           icon: const FaIcon(
           FontAwesomeIcons.twitter,
         ),
@@ -36,16 +53,19 @@ class SocialIconsRow extends StatelessWidget {
         ),
         
       //Este es el icono de youtube
-        IconButton(onPressed:() {},
+        IconButton(onPressed:() {
+          _launchURL("https://www.youtube.com/");
+        },
         icon: const FaIcon(
           FontAwesomeIcons.youtube,
-
-        ),
+          ),
         iconSize: 50,
         color: Colors.red,
         ),
       //Este es el icono de linkedin
-        IconButton(onPressed: (){}, 
+        IconButton(onPressed: (){
+          _launchURL("https://do.linkedin.com/");
+        }, 
         icon: const FaIcon(
         FontAwesomeIcons.linkedin,
         ),
